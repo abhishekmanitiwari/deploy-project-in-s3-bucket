@@ -16,5 +16,4 @@ jobs:
         run: |
           aws s3 sync ./ s3://deploy-project-in-s3-bucket/ \
           -- exclude "*" \
-          -- include "index.html" \
-          -- include "error.html"
+          -- include "index.html"
