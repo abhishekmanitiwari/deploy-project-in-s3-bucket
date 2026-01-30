@@ -1,0 +1,14 @@
+name: Git Hub Action For Deployin project on s3 bucket
+on: push
+jobs:
+  deploy-s3-bucket:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code from repo
+        uses: actions/checkout@v4
+      - name: Configure Aws credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS-ACCESS-KEY-ID}}
+          aws-secret-access-key: ${{ secrets.AWS-SECRET-ACCESS-KEY}}
+          aws-region: us-east-1
